@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: info
+
+mysql:
+  username: root
+  password: qwerty@1234
+  schema: financial
+  url: localhost:${mysql.port:3306}

@@ -1,0 +1,4 @@
+rootProject.name = 'financial_tracker'
+include('domain')
+include('application')
+include('infrastructure')

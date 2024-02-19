@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: financial_app
+    build: .
+    profiles: ["app"]
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    networks:
+      - financial_network
+
+  mysql:
+    container_name: financial_mysql
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwerty@1234
+      - MYSQL_DATABASE=financial
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - 3306:3306
+    networks:
+      - financial_network
+
+networks:
+  financial_network:
