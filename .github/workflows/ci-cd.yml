@@ -28,6 +28,7 @@ jobs:
 
       - name: Run application tests
         # run: ./gradlew test --stacktrace
+        run: echo ${{ env.IMAGE_NAME }}
 
   build:
     name: Build runner
