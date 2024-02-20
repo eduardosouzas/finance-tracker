@@ -55,7 +55,7 @@ jobs:
 
       - name: Set BUILD_TAG
         run: |
-          echo BUILD_TAG=$(echo {{ github.head_ref || github.ref_name }} | sed "s,/,_,g")-${{ github.run_number }} >> $GITHUB_ENV
+          echo BUILD_TAG=$(echo ${{ github.head_ref || github.ref_name }} | sed "s,/,_,g")-${{ github.run_number }} >> $GITHUB_ENV
 
       - name: Print BUILD_TAG defined
         run: |
