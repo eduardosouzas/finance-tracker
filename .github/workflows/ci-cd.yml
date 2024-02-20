@@ -51,7 +51,7 @@ jobs:
       - name: Build application
         uses: gradle/gradle-build-action@v3
         with:
-          args: clean build -x test
+          arguments: clean build -x test
 
       - name: Set BUILD_TAG
         run: |
